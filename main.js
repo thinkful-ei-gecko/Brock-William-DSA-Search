@@ -1,4 +1,4 @@
-const BinarySearchTree = require("./bst");
+const BinarySearchTree = require('./bst');
 
 function binarySearch(array, value, start, end) {
   start = start === undefined ? 0 : start;
@@ -24,6 +24,10 @@ function binarySearch(array, value, start, end) {
 }
 
 function main() {
-  
+  let newBST = new BinarySearchTree();
+  let input = [3, 5, 6, 8, 11, 12, 14, 15, 17, 18];
+
+  binarySearch(input);
+
 }
 main();
