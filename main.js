@@ -1,4 +1,4 @@
-const BinarySearchTree = require('./bst');
+const BST = require('./bst');
 
 function binarySearch(array, value, start, end) {
   start = start === undefined ? 0 : start;
@@ -23,11 +23,44 @@ function binarySearch(array, value, start, end) {
   }
 }
 
-function main() {
-  let newBST = new BinarySearchTree();
-  let input = [3, 5, 6, 8, 11, 12, 14, 15, 17, 18];
+function preOrder(BST){
+  console.log(BST.key);
+  if(BST.left){
+    preOrder(BST.left);
+  }
+  if(BST.right){
+    preOrder(BST.right);
+  }
+}
 
-  binarySearch(input, 16);
+function inOrder(BST){
+  if(BST.left){
+    inOrder(BST.left);
+  }
+  console.log(BST.key);
+  if(BST.right){
+    inOrder(BST.right);
+  }
+}
+
+function postOrder(BST){
+  if(BST.left){
+    postOrder(BST.left);
+  }
+  if(BST.right){
+    postOrder(BST.right);
+  }
+  console.log(BST.key);
+}
+
+function main() {
+  let newBST = new BST();
+  let input = [25, 15, 50, 10, 24, 35, 70, 4, 12, 18, 31, 44, 66, 90, 22];
+
+  input.forEach(item => newBST.insert(item));
+  //console.log(newBST);
+  postOrder(newBST);
+
 
 }
 main();
