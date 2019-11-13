@@ -27,7 +27,7 @@ function main() {
   let newBST = new BinarySearchTree();
   let input = [3, 5, 6, 8, 11, 12, 14, 15, 17, 18];
 
-  binarySearch(input);
+  binarySearch(input, 16);
 
 }
 main();
